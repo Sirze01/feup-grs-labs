@@ -1,4 +1,4 @@
-all: setup docker_network client_server router routing
+all: setup docker_network client_server router routing nagios
 
 clean:
 	./scripts/clear.sh
@@ -17,3 +17,6 @@ router:
 
 routing:
 	./scripts/routing.sh
+
+nagios:
+	./scripts/nagios.sh
