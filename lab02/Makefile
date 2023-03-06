@@ -1,3 +1,5 @@
+.PHONY: all clean setup docker_network client_server router routing nagios
+
 all: setup docker_network client_server router routing nagios
 
 clean:
