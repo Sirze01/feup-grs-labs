@@ -1,0 +1,80 @@
+1678112665||localhost||Current Load||OK - load average: 0.89, 0.75, 0.71||load1=0.890;5.000;10.000;0; load5=0.750;4.000;6.000;0; load15=0.710;3.000;4.000;0;
+1678112708||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678112751||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000402s;;;0.000000 size=695B;;;0
+1678112794||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.031000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678112811||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000354s;;;0.000000 size=695B;;;0
+1678112837||localhost||Root Partition||DISK OK - free space: / 13984 MiB (64.05% inode=92%):||/=7846MiB;17477;19662;0;21847
+1678112871||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000368s;;;0.000000 size=695B;;;0
+1678112880||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678112923||localhost||Total Processes||PROCS OK: 16 processes with STATE = RSZDT||procs=16;250;400;0;
+1678112931||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000374s;;;0.000000 size=695B;;;0
+1678112940||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678112965||localhost||Current Load||OK - load average: 1.70, 1.22, 0.92||load1=1.700;5.000;10.000;0; load5=1.220;4.000;6.000;0; load15=0.920;3.000;4.000;0;
+1678113000||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678113008||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678113060||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678113094||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.032000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678113137||localhost||Root Partition||DISK OK - free space: / 13971 MiB (63.99% inode=92%):||/=7860MiB;17477;19662;0;21847
+1678113223||localhost||Total Processes||PROCS OK: 16 processes with STATE = RSZDT||procs=16;250;400;0;
+1678113231||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000315s;;;0.000000 size=695B;;;0
+1678113265||localhost||Current Load||OK - load average: 1.08, 1.32, 1.07||load1=1.080;5.000;10.000;0; load5=1.320;4.000;6.000;0; load15=1.070;3.000;4.000;0;
+1678113308||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678113360||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678113394||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.032000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678113437||localhost||Root Partition||DISK OK - free space: / 13962 MiB (63.95% inode=91%):||/=7868MiB;17477;19662;0;21847
+1678113523||localhost||Total Processes||PROCS OK: 16 processes with STATE = RSZDT||procs=16;250;400;0;
+1678113531||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000291s;;;0.000000 size=695B;;;0
+1678113565||localhost||Current Load||OK - load average: 1.60, 1.45, 1.19||load1=1.600;5.000;10.000;0; load5=1.450;4.000;6.000;0; load15=1.190;3.000;4.000;0;
+1678113608||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678113660||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678113694||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.027000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678113737||localhost||Root Partition||DISK OK - free space: / 13934 MiB (63.82% inode=91%):||/=7897MiB;17477;19662;0;21847
+1678113823||localhost||Total Processes||PROCS OK: 16 processes with STATE = RSZDT||procs=16;250;400;0;
+1678113831||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000230s;;;0.000000 size=695B;;;0
+1678113865||localhost||Current Load||OK - load average: 2.10, 1.57, 1.28||load1=2.100;5.000;10.000;0; load5=1.570;4.000;6.000;0; load15=1.280;3.000;4.000;0;
+1678113908||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678113960||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678113994||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.04 ms||rta=0.039000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678114037||localhost||Root Partition||DISK OK - free space: / 13916 MiB (63.74% inode=91%):||/=7915MiB;17477;19662;0;21847
+1678114123||localhost||Total Processes||PROCS OK: 16 processes with STATE = RSZDT||procs=16;250;400;0;
+1678114131||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000227s;;;0.000000 size=695B;;;0
+1678114165||localhost||Current Load||OK - load average: 2.51, 1.69, 1.38||load1=2.510;5.000;10.000;0; load5=1.690;4.000;6.000;0; load15=1.380;3.000;4.000;0;
+1678114208||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678114260||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678114294||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.029000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678114337||localhost||Root Partition||DISK OK - free space: / 13912 MiB (63.72% inode=91%):||/=7919MiB;17477;19662;0;21847
+1678114423||localhost||Total Processes||PROCS OK: 20 processes with STATE = RSZDT||procs=20;250;400;0;
+1678114431||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000222s;;;0.000000 size=695B;;;0
+1678114465||localhost||Current Load||OK - load average: 0.15, 0.85, 1.11||load1=0.150;5.000;10.000;0; load5=0.850;4.000;6.000;0; load15=1.110;3.000;4.000;0;
+1678114508||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678114560||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678114594||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.031000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678114637||localhost||Root Partition||DISK OK - free space: / 13904 MiB (63.68% inode=91%):||/=7927MiB;17477;19662;0;21847
+1678114723||localhost||Total Processes||PROCS OK: 20 processes with STATE = RSZDT||procs=20;250;400;0;
+1678114731||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000244s;;;0.000000 size=695B;;;0
+1678114765||localhost||Current Load||OK - load average: 0.07, 0.44, 0.86||load1=0.070;5.000;10.000;0; load5=0.440;4.000;6.000;0; load15=0.860;3.000;4.000;0;
+1678114808||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678114860||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678114894||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.029000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678114937||localhost||Root Partition||DISK OK - free space: / 13903 MiB (63.68% inode=91%):||/=7927MiB;17477;19662;0;21847
+1678115023||localhost||Total Processes||PROCS OK: 20 processes with STATE = RSZDT||procs=20;250;400;0;
+1678115031||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000274s;;;0.000000 size=695B;;;0
+1678115065||localhost||Current Load||OK - load average: 0.03, 0.17, 0.62||load1=0.030;5.000;10.000;0; load5=0.170;4.000;6.000;0; load15=0.620;3.000;4.000;0;
+1678115108||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678115160||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678115194||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.04 ms||rta=0.037000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678115237||localhost||Root Partition||DISK OK - free space: / 13903 MiB (63.68% inode=91%):||/=7927MiB;17477;19662;0;21847
+1678115323||localhost||Total Processes||PROCS OK: 20 processes with STATE = RSZDT||procs=20;250;400;0;
+1678115331||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000261s;;;0.000000 size=695B;;;0
+1678115365||localhost||Current Load||OK - load average: 0.01, 0.10, 0.46||load1=0.010;5.000;10.000;0; load5=0.100;4.000;6.000;0; load15=0.460;3.000;4.000;0;
+1678115408||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678115460||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678115494||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.02 ms||rta=0.023000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678115537||localhost||Root Partition||DISK OK - free space: / 13903 MiB (63.68% inode=91%):||/=7927MiB;17477;19662;0;21847
+1678115623||localhost||Total Processes||PROCS OK: 20 processes with STATE = RSZDT||procs=20;250;400;0;
+1678115631||localhost||HTTP||HTTP WARNING: HTTP/1.1 401 Unauthorized - 695 bytes in 0.000 second response time||time=0.000263s;;;0.000000 size=695B;;;0
+1678115665||localhost||Current Load||OK - load average: 0.11, 0.10, 0.35||load1=0.110;5.000;10.000;0; load5=0.100;4.000;6.000;0; load15=0.350;3.000;4.000;0;
+1678115708||localhost||Current Users||USERS OK - 0 users currently logged in||users=0;20;50;0
+1678115760||localhost||Swap Usage||SWAP CRITICAL - 0% free (0 MB out of 0 MB) - Swap is either disabled, not present, or of zero size.||swap=0MB;0;0;0;0
+1678115794||localhost||PING||PING OK - Packet loss = 0%, RTA = 0.03 ms||rta=0.028000ms;100.000000;500.000000;0.000000 pl=0%;20;60;0
+1678115837||localhost||Root Partition||DISK OK - free space: / 13903 MiB (63.68% inode=91%):||/=7928MiB;17477;19662;0;21847
