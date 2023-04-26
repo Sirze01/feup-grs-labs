@@ -1,0 +1,63 @@
+version: "3.9"
+services:
+  router:
+    build: ./netubuntu
+    cap_add:
+      - NET_ADMIN
+    command: sh -c 'ip addr add 10.0.2.1/24 dev eth0 && ip addr add 10.0.1.1/24 dev eth1 && ./root/sleep.sh'
+    networks:
+      c_management_network:
+      a_server_network:
+        ipv4_address: 10.0.2.254
+        priority: 3
+      b_client_network:
+        ipv4_address: 10.0.1.254
+        priority: 2
+
+  client:
+    build: ./netubuntu
+    networks:
+      b_client_network:
+    #deploy:
+    #  replicas: 5
+
+  load_balancer:
+    build: ./nginx/loadbalancer
+    volumes:
+      - ./nginx/loadbalancer/logs:/var/log/nginx/
+    networks:
+      a_server_network:
+        ipv4_address: 10.0.2.8
+
+  server:
+    build: ./nginx/server
+    volumes:
+      - ./nginx/server/logs:/var/log/nginx/
+    networks:
+      a_server_network:
+    deploy:
+      replicas: 4
+  
+    
+
+networks:
+  c_management_network:
+  
+  a_server_network:
+    driver: macvlan
+    #driver_opts:
+    #  parent: ens19.10
+    ipam:
+      config:
+        - subnet: 10.0.2.0/24
+        #  gateway: 10.0.2.1
+  
+  b_client_network:
+    driver: macvlan
+    #driver_opts:
+    #  parent: ens20.10
+    ipam:
+      config:
+        - subnet: 10.0.1.0/24
+        #  gateway: 10.0.1.1
+          ip_range: 10.0.1.0/24
