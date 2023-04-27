@@ -37,11 +37,34 @@ services:
       a_server_network:
     deploy:
       replicas: 4
+
+  locust-master:
+    image: locustio/locust
+    ports:
+     - "8089:8089"
+    volumes:
+      - ./locust/:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --master -H http://10.0.2.8
+    networks:
+      c_management_network:
+      b_client_network:
+  
+  locust-worker:
+    image: locustio/locust
+    volumes:
+      - ./locust/:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --worker --master-host locust-master
+    depends_on:
+      - locust-master
+    networks:
+      c_management_network:
+      b_client_network:
   
     
 
 networks:
   c_management_network:
+    driver: bridge
   
   a_server_network:
     driver: macvlan
