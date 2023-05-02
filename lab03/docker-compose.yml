@@ -5,7 +5,7 @@ services:
     privileged: true
     cap_add:
       - NET_ADMIN
-    command: sh -c 'ip addr add 10.0.2.1/24 dev eth0 && ip addr del 10.0.2.254/24 dev eth0 && ip addr add 10.0.1.1/24 dev eth1 && ip addr del 10.0.1.254/24 dev eth1 && iptables -t filter -A FORWARD -p tcp --dport 80 ! -s 10.0.1.253 -j DROP && ./root/sleep.sh'
+    command: sh -c '/root/router_script.sh'
     networks:
       c_management_network:
       a_server_network:
@@ -27,11 +27,11 @@ services:
     networks:
       b_client_network:
   
-  proxy:
-    build: ./proxy
-    networks:
-      b_client_network:
-        ipv4_address: 10.0.1.253
+  #proxy:
+  #  build: ./proxy
+  #  networks:
+  #    b_client_network:
+  #      ipv4_address: 10.0.1.253
 
   load_balancer:
     build: ./nginx/loadbalancer
