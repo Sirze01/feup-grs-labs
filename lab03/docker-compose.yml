@@ -76,24 +76,13 @@ services:
         ipv4_address: 172.16.123.132
 
   dns_server:
-    build: ./dns
-    privileged: true
+    image: internetsystemsconsortium/bind9:9.16
     volumes:
-      - ./dns/named.conf.options:/etc/bind/named.conf.options
-    cap_add:
-      - NET_ADMIN
+      - ./dns/named.conf:/etc/bind/named.conf
+      - ./dns/db.myorg.net:/etc/bind/db.myorg.net
     networks:
       c_dmz_network:
         ipv4_address: 172.16.123.130
-
-  # dns_server_resolver:
-  #   build: ./dns_resolver
-  #   privileged: true
-  #   cap_add:
-  #     - NET_ADMIN
-  #   networks:
-  #     c_dmz_network:
-  #       ipv4_address: 172.16.123.131
 
 # Public
 
@@ -101,9 +90,9 @@ services:
     build: ./netubuntu_external_client
     cap_add:
       - NET_ADMIN
-    command: sh -c 'ip r a 10.0.0.0/8 via 172.31.255.253 && ./root/sleep.sh'
-    dns: 
-      - 172.16.123.130
+    command: sh -c 'ip r a 172.16.123.128/28 via 172.31.255.253 && ./root/sleep.sh'
+    volumes:
+      - ./netubuntu_external_client/resolv.conf:/etc/resolv.conf
     networks:
       d_public_network:
         ipv4_address: 172.31.255.100
