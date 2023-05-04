@@ -13,7 +13,7 @@
 > iptables -t nat -A POSTROUTING -s 192.168.88.101 -o eth0 -j MASQUERADE
 
 - To copy files using SCP
-> scp -i ./VMA_Keys/gors-2122-2s.rsa ./VMA_Keys/gors-2122-2s.rsa theuser@192.168.109.156:~
+> scp -r -i ./vms/management/keys/gors-2122-2s.rsa ../feup-grs-labs/ theuser@192.168.109.156:~
 
 - Tracepath
 > tracepath (ip/name) [-n to disable name resolving]
