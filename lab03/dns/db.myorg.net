@@ -1,0 +1,25 @@
+;
+; BIND data file for the local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ns.myorg.net. admin.myorg.net. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+;
+
+; NS records for name servers
+        IN      NS      ns.myorg.net.
+
+; A records for name servers
+ns.myorg.net.          IN      A       172.16.123.130
+
+; A records for domain names
+myorg.net.              IN      A      172.16.123.130
+ns.myorg.net.          IN      A      172.16.123.130
+www.myorg.net.         IN      A      172.16.123.132
+
+
