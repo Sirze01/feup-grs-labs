@@ -15,5 +15,8 @@
 - To copy files using SCP
 > scp -r -i ./vms/management/keys/gors-2122-2s.rsa ../feup-grs-labs/ theuser@192.168.109.156:~
 
+- To download files using SCP
+> mkdir ../copy/ && scp -r -i ./vms/management/keys/gors-2122-2s.rsa theuser@192.168.109.156:~/feup-grs-labs ../copy/
+
 - Tracepath
 > tracepath (ip/name) [-n to disable name resolving]
