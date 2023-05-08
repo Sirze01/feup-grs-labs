@@ -7,6 +7,8 @@ ip route add 10.0.0.0/8 via 172.16.123.142
 iptables -t nat -F
 iptables -t filter -F
 iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -o eth1 -j MASQUERADE
+# iptables -t nat -A POSTROUTING -s 172.16.123.142 -o eth1 -j MASQUERADE # enables internal router to access public internet
+
 iptables -P FORWARD DROP
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -m state --state NEW -i eth0 -j ACCEPT
