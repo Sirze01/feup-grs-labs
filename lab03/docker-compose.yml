@@ -4,11 +4,10 @@ services:
 # Private
 
   router:
-    build: ./netubuntu
+    build: ./router
     privileged: true
     cap_add:
       - NET_ADMIN
-    command: sh -c '/root/router_script.sh'
     networks:
       a_server_network:
         ipv4_address: 10.0.2.254
@@ -20,7 +19,7 @@ services:
         ipv4_address: 172.16.123.142
 
   client:
-    build: ./netubuntu
+    build: ./client
     networks:
       b_client_network:
     #deploy:
@@ -56,11 +55,10 @@ services:
 
 # DMZ
   edge_router:
-    build: ./netubuntu
+    build: ./edge_router
     privileged: true
     cap_add:
       - NET_ADMIN
-    command: sh -c '/root/edge_router_script.sh'
     networks:
       c_dmz_network:
         ipv4_address: 172.16.123.141
@@ -87,12 +85,12 @@ services:
 # Public
 
   external_client:
-    build: ./netubuntu_external_client
+    build: ./external_client
     cap_add:
       - NET_ADMIN
     command: sh -c 'ip r a 172.16.123.128/28 via 172.31.255.253 && ./root/sleep.sh'
     volumes:
-      - ./netubuntu_external_client/resolv.conf:/etc/resolv.conf
+      - ./external_client/resolv.conf:/etc/resolv.conf
     networks:
       d_public_network:
         ipv4_address: 172.31.255.100
