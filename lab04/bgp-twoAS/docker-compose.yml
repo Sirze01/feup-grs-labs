@@ -1,0 +1,213 @@
+version: "3.3"
+services:
+
+  # Organization 1
+  org1_router1:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r replace default via 172.31.255.1 && iptables -t nat -A POSTROUTING -s 172.16.123.0/24 -o eth2 -j MASQUERADE && sh /root/start-bgp.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+      - ./quagga/config/bgpd-as100.conf:/etc/quagga/bgpd.conf
+    networks:
+      a_org1_priv_network:
+        ipv4_address: 10.0.1.2
+
+      b_org1_priv_network:
+        ipv4_address: 10.0.1.10
+
+      f_public_network:
+        ipv4_address: 172.31.255.253
+
+  org1_router2:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r del default && ip addr add 172.16.123.145/28 dev eth2 && sh /root/start.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+    networks:
+      b_org1_priv_network:
+        ipv4_address: 10.0.1.11
+
+      c_org1_priv_network:
+        ipv4_address: 10.0.1.18
+
+      e_org1_public_network:
+        ipv4_address: 172.16.123.158
+
+  org1_client2:
+    build: ./client
+    networks:
+      e_org1_public_network:
+        ipv4_address: 172.16.123.146
+
+  org1_router3:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r del default && ip addr add 172.16.123.129/28 dev eth2 && sh /root/start.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+    networks:
+      a_org1_priv_network:
+        ipv4_address: 10.0.1.3
+
+      c_org1_priv_network:
+        ipv4_address: 10.0.1.19
+
+      d_org1_public_network:
+        ipv4_address: 172.16.123.142
+
+  org1_client3:
+    build: ./client
+    networks:
+      d_org1_public_network:
+        ipv4_address: 172.16.123.130
+
+
+  # Organization 2
+  org2_router1:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r replace default via 172.31.255.1 && iptables -t nat -A POSTROUTING -s 172.16.123.0/24 -o eth2 -j MASQUERADE && sh /root/start-bgp.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+      - ./quagga/config/bgpd-as200.conf:/etc/quagga/bgpd.conf
+    networks:
+      a_org2_priv_network:
+        ipv4_address: 10.0.2.2
+
+      b_org2_priv_network:
+        ipv4_address: 10.0.2.10
+
+      f_public_network:
+        ipv4_address: 172.31.255.252
+
+  org2_router2:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r del default && ip addr add 172.16.123.1/28 dev eth2 && sh /root/start.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+    networks:
+      b_org2_priv_network:
+        ipv4_address: 10.0.2.11
+
+      c_org2_priv_network:
+        ipv4_address: 10.0.2.18
+
+      e_org2_public_network:
+        ipv4_address: 172.16.123.14
+
+  org2_client2:
+    build: ./client
+    networks:
+      e_org2_public_network:
+        ipv4_address: 172.16.123.2
+
+  org2_router3:
+    build: ./quagga
+    privileged: true
+    command: sh -c "ip r del default && ip addr add 172.16.123.17/28 dev eth2 && sh /root/start.sh"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./quagga/config/zebra.conf:/etc/quagga/zebra.conf
+      - ./quagga/config/ospfd.conf:/etc/quagga/ospfd.conf
+    networks:
+      a_org2_priv_network:
+        ipv4_address: 10.0.2.3
+
+      c_org2_priv_network:
+        ipv4_address: 10.0.2.19
+
+      d_org2_public_network:
+        ipv4_address: 172.16.123.30
+
+  org2_client3:
+    build: ./client
+    networks:
+      d_org2_public_network:
+        ipv4_address: 172.16.123.18
+
+networks:
+
+  a_org1_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.1.0/29
+
+  a_org2_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.2.0/29
+  
+  b_org1_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.1.8/29
+
+  b_org2_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.2.8/29
+  
+  c_org1_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.1.16/29
+  
+  c_org2_priv_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 10.0.2.16/29
+
+  d_org1_public_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 172.16.123.128/28
+
+  d_org2_public_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 172.16.123.16/28
+
+  e_org1_public_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 172.16.123.144/28
+
+  e_org2_public_network:
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 172.16.123.0/28
+
+  f_public_network:
+    ipam:
+      config:
+        - subnet: 172.31.255.0/24
+    
